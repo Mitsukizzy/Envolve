@@ -6,26 +6,91 @@
     <div class="navbar menubar">
         <div class="col-md-3"><h2>ENVOLVE</h2></div>
         <div class="col-md-9 main-menu-strip">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <a class="btn btn-default button-mainmenu" href="#">Browse</a>
                 <a class="btn btn-default button-mainmenu" href="#">Create</a>
                 <a class="btn btn-default button-mainmenu" href="#">About</a>
                 <a class="btn btn-default button-mainmenu" href="#">My Issues</a>
             </div>
-            <div class="col-md-3">
-                <form class="form-wrapper">
-                    <input type="text" class="form-control" placeholder="Search...">
-                    <button class="glyphicon glyphicon-search btn-search" type="submit"></button>
-                </form>   
+            <div class="col-md-4">
+                <input type="text" class="form-control left" placeholder="Search...">
+                <button class="glyphicon glyphicon-search btn-search left" type="submit"></button>  
             </div>
         </div>
     </div>
     <div class="col-md-12 maindiv">
         <div class="col-md-8">
             <h1 id="key-issue">Issue</h1>
+            <div id="carousel-example-generic" class="carousel slide pad" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/USC%20landscape.jpg" class="img-responsive" alt="Responsive image">
+                        <div class="carousel-caption">
+                            USC Landscape
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/USC%20landscape.jpg" class="img-responsive" alt="Responsive image">
+                        <div class="carousel-caption">
+                            USC Fountain
+                        </div>
+                    </div>
+                    ...
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+            <!-- Details -->
+            <div class="col-md-12">
+                <h2>Detailed Explanation</h2>
+                <p id="details">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a faucibus tellus. Vestibulum sodales augue in lectus aliquet, id ultrices justo efficitur. Maecenas at imperdiet ex, eu auctor urna. In viverra ac odio nec faucibus. Pellentesque quis facilisis urna. Duis facilisis magna tincidunt lorem sagittis, eu vehicula tortor semper. Quisque cursus in est cursus fermentum. Phasellus nec felis ac leo porta tincidunt feugiat ac libero. Sed tempor tempor neque, vel iaculis ligula pretium ac. Duis ipsum sapien, facilisis eu porta congue, convallis a massa. Aliquam commodo maximus mi eu rhoncus. Sed venenatis sed lacus sed rutrum. Suspendisse urna tellus, commodo eu libero ut, dapibus gravida leo. Nunc eu pharetra metus. <br /><br />
+
+                Sed sit amet tortor bibendum felis tincidunt aliquet. Aenean eget malesuada enim. Sed varius eu dolor a aliquam. Vivamus lorem felis, finibus nec pulvinar a, pellentesque sit amet purus. Fusce eros eros, mattis luctus sapien a, fermentum sagittis dolor. Suspendisse a justo mi. Pellentesque tellus tortor, ornare id libero sit amet, ornare rutrum erat. Nulla facilisi. Suspendisse sit amet eros finibus, placerat tellus vel, convallis ligula. Etiam id porttitor mauris, sit amet dignissim leo. Vivamus vestibulum non lorem at ullamcorper. Maecenas elit enim, bibendum a nulla sed, bibendum euismod lacus. In laoreet est purus, vitae dignissim neque scelerisque sed. Nunc eget neque nec ligula euismod placerat eu eget nisi. Vivamus turpis elit, tincidunt non blandit ut, mollis vel diam. Donec vitae tristique turpis, at venenatis nisl. <br /><br />
+                </p>
+            </div>
+            <!-- Progress Bar -->
+            <div class="col-md-12">
+                <h2>Progress</h2>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        45%
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <h3>Summary</h1>
+            <h3>Summary</h3>
+            <h4>Our one-liner:</h4>
+            <p class="tab">blahblahblah</p>
+            <br />
+            <h4>Step Goals</h4>
+            <ul>
+                <li>Goal 1</li>
+                <li>Goal 2</li>
+                <li>Goal 3</li>
+            </ul>
+            <br />
+            <h4>Signatures</h4>
+            <p class="tab" id="signatures">1533/3000</p>
+            
         </div>
     </div>
 </body>

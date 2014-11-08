@@ -18,3 +18,16 @@ body{
 .main-menu-strip{
     margin-top: 15px;   
 }
+
+.pad{
+    padding: 0px;
+    margin: 0 20px 0 0;
+}   
+
+.left{
+    float: left;   
+}
+
+.tab{
+    margin-left: 15px;   
+}
