@@ -1,10 +1,15 @@
+<title>Envolve</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="js/app.js"></script>
 
 <body>
     <div class="navbar menubar">
-        <div class="col-md-3"><h2>ENVOLVE</h2></div>
+        <div class="col-md-3 no-margin">
+            <img src="images/envolve%20logo.jpg" class="img-responsive" alt="logo">
+        </div>
         <div class="col-md-9 main-menu-strip">
             <div class="col-md-8">
                 <a class="btn btn-default button-mainmenu" href="#">Browse</a>
@@ -13,7 +18,7 @@
                 <a class="btn btn-default button-mainmenu" href="#">My Issues</a>
             </div>
             <div class="col-md-4">
-                <input type="text" class="form-control left" placeholder="Search...">
+                <input type="text" class="searchbox left" placeholder="   Search...">
                 <button class="glyphicon glyphicon-search btn-search left" type="submit"></button>  
             </div>
         </div>
@@ -38,12 +43,11 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="images/USC%20landscape.jpg" class="img-responsive" alt="Responsive image">
+                        <img src="images/LA%20skyline.jpg" class="img-responsive" alt="Responsive image">
                         <div class="carousel-caption">
-                            USC Fountain
+                            LA Skyline
                         </div>
                     </div>
-                    ...
                 </div>
 
                 <!-- Controls -->
@@ -70,27 +74,52 @@
             <div class="col-md-12">
                 <h2>Progress</h2>
                 <div class="progress">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
                         45%
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <h3>Summary</h3>
-            <h4>Our one-liner:</h4>
-            <p class="tab">blahblahblah</p>
-            <br />
-            <h4>Step Goals</h4>
-            <ul>
-                <li>Goal 1</li>
-                <li>Goal 2</li>
-                <li>Goal 3</li>
-            </ul>
-            <br />
-            <h4>Signatures</h4>
-            <p class="tab" id="signatures">1533/3000</p>
-            
+            <div class="col-md-4">
+                <h3>Summary</h3>
+                <h4>Our one-liner:</h4>
+                <p class="tab">blahblahblah</p>
+                <br />
+                <h4>Step Goals</h4>
+                <ul>
+                    <li>Goal 1</li>
+                    <li>Goal 2</li>
+                    <li>Goal 3</li>
+                </ul>
+                <br />
+                <h4>Signatures</h4>
+                <p class="tab" id="signatures">1533/3000</p>
+            </div>
         </div>
-    </div>
+        <!-- Timeline -->
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                <h2 class="">Timeline</h2>
+                <img src="images/timeline.png" class="img-responsive center-block" alt="Timeline image">
+                <hr />
+                <!-- Conversations -->
+                    <div class="col-md-9">
+                        <h2 class="orange">Conversations</h2>     
+                        <div id="respond">
+                            <h3 class="orange">Add to the conversation</h3>
+                            <form action="post_comment.php" method="post" id="commentform">
+                                <label for="comment" class="required grey">Your message</label>
+                                <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+                                <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
+                                <input name="submit" type="submit" value="Submit comment" />
+                            </form>  
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 class="orange">Goals/Topics</h3>       
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
