@@ -1,0 +1,20 @@
+.menubar{
+    margin-top:20px;   
+}
+
+.button-mainmenu{
+    margin: 5px 20px;   
+}
+
+.btn-search{
+    height: 30px;
+    margin-left: -15px;
+}
+
+body{
+    padding: 0 150px;   
+}
+
+.main-menu-strip{
+    margin-top: 15px;   
+}
