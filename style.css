@@ -11,6 +11,9 @@ h1, h2, h3{
 .blue{
     color: #b1cafc !important;   
 }
+.darkblue{
+    color: #799bdf !important;   
+}
 .menubar{
     margin-top:20px;   
 }
@@ -94,7 +97,7 @@ body{
 #add-comment * {margin-bottom: .5em;}
 
 input[type='submit'] {
-    background: #ec8500;
+    background: #5a81ce;
     border: 0;
     border-radius: 5px;
     color: #fff;
@@ -107,7 +110,7 @@ input[type='submit'] {
 
 input:required, 
 textarea:required {
-    outline: 1px solid #ffcb60;
+    outline: 1px solid #b1cafc;
 }
 
 #posts-list.has-comments li.no-comments {
