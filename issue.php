@@ -198,7 +198,7 @@ if(!$results){
                 <a class="btn btn-default button-mainmenu" href="browse.html">Browse</a>
                 <a class="btn btn-default button-mainmenu" href="http://envolvesc.me/form.php">Create</a>
                 <a class="btn btn-default button-mainmenu" href="about.html">About</a>
-                <a class="btn btn-default button-mainmenu" href="#">My Issues</a>
+                <a class="btn btn-default button-mainmenu" href="issues/usc_provost_search.html">My Issues</a>
             </div>
             <div class="col-md-4">
                 <input type="text" class="searchbox left" placeholder="   Search...">
@@ -275,7 +275,7 @@ if(!$results){
             <div class="col-md-4">
                 <h3 class="blue">Summary</h3>
                 <h4>Our one-liner:</h4>
-                <p class="tab">blahblahblah</p>
+                <p class="tab"></p>
                 <br />
                 <h4>Step Goals</h4>
                 <ul>

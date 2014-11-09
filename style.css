@@ -58,7 +58,7 @@ h1, h2, h3{
 .tri-col{
     max-width: 100px;
     max-height: 100px;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 .footer{
     margin: 50px 0;   
@@ -66,8 +66,12 @@ h1, h2, h3{
 body{
     padding: 0 150px;   
 }
-#mycarousel, #main-carousel{
+#main-carousel{
     max-width: 1000px;   
+}
+
+#mycarousel{
+    max-width: 750px;   
 }
 
 .main-menu-strip{
@@ -81,6 +85,9 @@ body{
 
 .left{
     float: left;   
+}
+.caption-text{
+    margin-bottom: 40px;   
 }
 
 .tab{
@@ -166,12 +173,4 @@ textarea:required {
 
 textarea{
   resize: none;
-}
-
-.label {
-            text-align: right;
-            font-weight: bold;
-            padding-right: 5px;
-            font-size: 24px;
-}
-
+}		 
