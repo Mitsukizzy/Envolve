@@ -1,17 +1,20 @@
 <?php
 $conn = mysqli_connect("uscitp.com", "jackyche_admin", "usc2014", "jackyche_envolve_db");
-
+                        //(server, user, password, database)
 if(mysqli_connect_errno()){
     echo "Connection failed: ", mysqli_connect_error();
 }
 
-$sql = "SELECT * FROM tags
+$sql_tags = "SELECT * FROM tags
         ORDER BY tags";
+//$sql_TitleDescription = "SELECT * FROM event";
+//$sql_goals = "SELECT * FROM goals";
 
-$sort =
-$results = mysqli_query($conn, $sql);
+$results_tags = mysqli_query($conn, $sql_tags);
+//$results_TitleDescription = mysqli_query($conn, $sql_TitleDescription);
+//$results_goals = mysqli_query($conn, $sql_goals);
 
-if(!$results){
+if(!$results_tags){ // || !$results_TitleDescription || $results_goals
     exit("SQL Error: " . mysqli_error($conn));
 }
 ?>
@@ -26,7 +29,6 @@ if(!$results){
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/bootstrap.js"></script>
-
     <script type="text/javascript">
         $(document).ready(function(){
             $("#media-carousel").carousel();
@@ -57,17 +59,17 @@ if(!$results){
     <h1 id="key-issue">Start a Conversation!</h1>
 
     <!-- Form -->
-    <form class="box" method="POST" name="form" action="issue.php" enctype="multipart/form-data">
+    <form class="box" method="post" name="form" action="eventInsert.php"> <!-- issue.php -->
         <div class="inputbox">
             <br/>
             <div class="left_col">
             <!-- name is "headline"-->
             What are we talking about here? <span class="glyphicon glyphicon-info-sign"></span>
-                <br/><input type="text" class="blackwords" name="headline" size="72">
+                <br/><input type="text" class="blackwords" name="headline" size="73">
                     <br/><br/>
             <!-- name is "description"-->
             Tell me about it! <span class="glyphicon glyphicon-info-sign"></span>
-                <br/><textarea class="blackwords" name="description" rows="8" cols="75"></textarea>
+                <br/><textarea class="blackwords" name="description" rows="8" cols="77"></textarea>
                     <br/><br/>
             <!-- name is "goal1", "goal2", "goal3"-->
             What do we want accomplished? <span class="glyphicon glyphicon-info-sign"></span><br/>
@@ -86,7 +88,7 @@ if(!$results){
                     <br/>
                 <div class="blackwords">
                 <?php
-                while ($currentrow = mysqli_fetch_array($results)) {
+                while ($currentrow = mysqli_fetch_array($results_tags)) {
                 echo '<input type="checkbox" name="' . tags_id . '" value="' . $currentrow["tags_id"] . '"> ' . $currentrow["tags"] . '<br/>';
                 }
                 ?></div>

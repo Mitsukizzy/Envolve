@@ -150,3 +150,10 @@ textarea:required {
 textarea{
   resize: none;
 }
+
+.label {
+            text-align: right;
+            font-weight: bold;
+            padding-right: 5px;
+            font-size: 24px;
+}

@@ -1,3 +1,36 @@
+<?php
+$event_id = $_REQUEST['event_id'];
+
+/*
+$headline = $_REQUEST['headline'];
+$description = $_REQUEST['description'];
+$goal_1 = $_REQUEST['goal1'];
+$goal_2 = $_REQUEST['goal2'];
+$goal_3 = $_REQUEST['goal3'];
+$tags = $_REQUEST['tags_id'];*/
+
+if(empty($event_id)){//  empty($headline) || empty($description) || empty($goal_1)|| empty($tags)
+    exit("Error: No Event given.");
+    header("Location: form.php");
+}
+
+$conn = mysqli_connect("uscitp.com", "jackyche_admin", "usc2014", "jackyche_envolve_db");
+                        //(server, user, password, database)
+if(mysqli_connect_errno()) {
+    echo "Connection failed: " . mysqli_connect_error();
+}
+
+$sql = "SELECT * FROM event 
+        WHERE event_id LIKE '" . $event_id . "'";
+
+$results = mysqli_query($conn, $sql);
+if(!$results){
+    exit("SQL Error: " . mysqli_error($conn));
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +44,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <?php
-    require('pusher_config.php');
+    //require('pusher_config.php');
     ?>
 
     <script>
@@ -173,7 +206,11 @@
     </div>
     <div class="col-md-12 maindiv">
         <div class="col-md-8">
-            <h1 id="key-issue">Issue</h1>
+            <h1 id="key-issue">
+                <?php 
+                    while($row = mysqli_fetch_array($results)){
+                        echo $row['headline'] .
+                    '</h1>
             <div id="media-carousel" class="carousel slide pad" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -220,12 +257,8 @@
             
             <!-- Details -->
             <div class="col-md-12">
-                <h2>Detailed Explanation</h2>
-                <p id="details">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a faucibus tellus. Vestibulum sodales augue in lectus aliquet, id ultrices justo efficitur. Maecenas at imperdiet ex, eu auctor urna. In viverra ac odio nec faucibus. Pellentesque quis facilisis urna. Duis facilisis magna tincidunt lorem sagittis, eu vehicula tortor semper. Quisque cursus in est cursus fermentum. Phasellus nec felis ac leo porta tincidunt feugiat ac libero. Sed tempor tempor neque, vel iaculis ligula pretium ac. Duis ipsum sapien, facilisis eu porta congue, convallis a massa. Aliquam commodo maximus mi eu rhoncus. Sed venenatis sed lacus sed rutrum. Suspendisse urna tellus, commodo eu libero ut, dapibus gravida leo. Nunc eu pharetra metus. <br /><br />
-
-                Sed sit amet tortor bibendum felis tincidunt aliquet. Aenean eget malesuada enim. Sed varius eu dolor a aliquam. Vivamus lorem felis, finibus nec pulvinar a, pellentesque sit amet purus. Fusce eros eros, mattis luctus sapien a, fermentum sagittis dolor. Suspendisse a justo mi. Pellentesque tellus tortor, ornare id libero sit amet, ornare rutrum erat. Nulla facilisi. Suspendisse sit amet eros finibus, placerat tellus vel, convallis ligula. Etiam id porttitor mauris, sit amet dignissim leo. Vivamus vestibulum non lorem at ullamcorper. Maecenas elit enim, bibendum a nulla sed, bibendum euismod lacus. In laoreet est purus, vitae dignissim neque scelerisque sed. Nunc eget neque nec ligula euismod placerat eu eget nisi. Vivamus turpis elit, tincidunt non blandit ut, mollis vel diam. Donec vitae tristique turpis, at venenatis nisl. <br /><br />
-                </p>
+                <h2>Details</h2>
+                <p id="details">' . $row['description'] . '</p>
             </div>
             <!-- Progress Bar -->
             <div class="col-md-12">
@@ -244,9 +277,12 @@
                 <br />
                 <h4>Step Goals</h4>
                 <ul>
-                    <li>Goal 1</li>
-                    <li>Goal 2</li>
-                    <li>Goal 3</li>
+                    <li>Goal 1:' . $row['goal_1'] . '</li>
+                    <li>Goal 2:' . $row['goal_2'] . '</li>
+                    <li>Goal 3:' . $row['goal_3'];
+                    }
+                ?> 
+                    </li>
                 </ul>
                 <br />
                 <h4>Signatures</h4>
