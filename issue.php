@@ -7,8 +7,17 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="http://js.pusher.com/1.11/pusher.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+    <?php
+    require('pusher_config.php');
+    ?>
+
+    <script>
+    var APP_KEY = '<?php echo(APP_KEY); ?>';
+    </script>
+    
     <script type="text/javascript">
         $(document).ready(function(){
              $("#media-carousel").carousel();
@@ -98,9 +107,34 @@
               return display;
             }
         
+            function handleSubmit() {
+              var form = $(this);
+              var data = {
+                "comment_author": form.find('#comment_author').val(),
+                "email": form.find('#email').val(),
+                "comment": form.find('#comment').val(),
+                "comment_post_ID": form.find('#comment_post_ID').val()
+              };
+
+              var socketId = getSocketId();
+              if(socketId !== null) {
+                data.socket_id = socketId;
+              }
+
+              postComment(data);
+
+              return false;
+            }
+
+            function getSocketId() {
+              if(pusher && pusher.connection.state === 'connected') {
+                return pusher.connection.socket_id;
+              }
+              return null;
+            }
         
             //TEST
-            $(function() {
+/*            $(function() {
 
               $(document).keyup(function(e) {
                 e = e || window.event;
@@ -115,7 +149,7 @@
                 }
               });
 
-            });
+            });*/
     </script>
 </head>
 
@@ -126,9 +160,9 @@
         </div>
         <div class="col-md-9 main-menu-strip">
             <div class="col-md-8">
-                <a class="btn btn-default button-mainmenu" href="#">Browse</a>
-                <a class="btn btn-default button-mainmenu" href="#">Create</a>
-                <a class="btn btn-default button-mainmenu" href="#">About</a>
+                <a class="btn btn-default button-mainmenu" href="browse.html">Browse</a>
+                <a class="btn btn-default button-mainmenu" href="http://envolvesc.me/issue.php">Create</a>
+                <a class="btn btn-default button-mainmenu" href="index.html">About</a>
                 <a class="btn btn-default button-mainmenu" href="#">My Issues</a>
             </div>
             <div class="col-md-4">
@@ -153,8 +187,8 @@
                     <div class="item active">
                         <img src="images/USC%20landscape.jpg" class="img-responsive" alt="Responsive image">
                         <div class="carousel-caption">
-                            <h3 class="blue">USC Landscape</h3>
-                            <p>Looks nice</p>
+                            <h3 class="white"></h3>
+                            <p class="blue"></p>
                         </div>
                     </div>
                     <div class="item">
@@ -252,14 +286,19 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <h3 class="darkblue">Goals/Topics</h3>       
+                        <h2 class="darkblue">Goals/Topics</h2>
+                        <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-default">Get 1,000 signatures</button>
+                            <button type="button" class="btn btn-default">Obtain support from ______</button>
+                            <button type="button" class="btn btn-default">Reach 3,000 signatures</button>
+                        </div>     
                     </div>
                 </div>
             </div>
         </div>
     
-        <div class="col-md-12">
-    
+        <div class="col-md-12 footer">
+            <p class="text-center">Made with <3 at HackSC</p>
         </div>
 </body>
 </html>

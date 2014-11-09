@@ -28,7 +28,7 @@ h1, h2, h3{
 }
 
 .button-mainmenu{
-    margin: 5px 20px;   
+    margin: 5px 5px;   
 }
 
 .searchbox{
@@ -41,7 +41,9 @@ h1, h2, h3{
     border-style: none;
     border: 1px solid #CCCCCC;
 }
-
+#media-carousel{
+    margin: 20px;   
+}
 .btn-search{
     height: 33px;
     width: 15%;
@@ -53,7 +55,13 @@ h1, h2, h3{
     border-style: none;
     border: 1px solid #CCCCCC;
 }
-
+.tri-col{
+    max-width: 150px;
+    max-height: 150px;
+}
+.footer{
+    margin: 50px 0;   
+}
 body{
     padding: 0 150px;   
 }
