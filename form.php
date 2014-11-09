@@ -19,7 +19,7 @@ if(!$results){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Envolve</title>
+    <title>Envolve | Issue Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
