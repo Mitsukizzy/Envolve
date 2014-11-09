@@ -14,9 +14,6 @@ h1, h2, h3{
 .darkblue{
     color: #799bdf !important;   
 }
-.white{
-    color: #fff !important;   
-}
 .menubar{
     margin-top:20px;   
 }
@@ -28,7 +25,7 @@ h1, h2, h3{
 }
 
 .button-mainmenu{
-    margin: 5px 5px;   
+    margin: 5px 20px;   
 }
 
 .searchbox{
@@ -41,9 +38,7 @@ h1, h2, h3{
     border-style: none;
     border: 1px solid #CCCCCC;
 }
-#media-carousel{
-    margin: 20px;   
-}
+
 .btn-search{
     height: 33px;
     width: 15%;
@@ -55,13 +50,7 @@ h1, h2, h3{
     border-style: none;
     border: 1px solid #CCCCCC;
 }
-.tri-col{
-    max-width: 150px;
-    max-height: 150px;
-}
-.footer{
-    margin: 50px 0;   
-}
+
 body{
     padding: 0 150px;   
 }
@@ -126,4 +115,38 @@ textarea:required {
 
 #posts-list.has-comments li.no-comments {
   display: none;
+}
+
+.box{
+  background-color: #AAAAAA;
+  width: 900px;
+  border: 20px solid #bdc3c7;
+  border-radius: 10px;
+  text-align: left;
+  color: #ffcb60;
+}
+
+.left_col{
+    width: 550px;
+    float: left;
+}
+
+.right_col{
+    width: 200px;
+    float: left;
+}
+
+.inputbox{
+  margin-left: 35px;
+  font-size: 18px;
+    height: 600px;
+}
+
+.blackwords{
+    color: black;
+    font-size: 14px;
+}
+
+textarea{
+  resize: none;
 }
