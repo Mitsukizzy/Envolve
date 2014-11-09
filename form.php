@@ -37,13 +37,15 @@ if(!$results){
 <body>
 <div class="navbar menubar">
     <div class="col-md-3 no-margin">
-        <img src="images/envolve%20logo.jpg" class="img-responsive" alt="logo">
+        <a href="index.html">
+            <img src="images/envolve%20logo.jpg" class="img-responsive" alt="logo">
+        </a>
     </div>
     <div class="col-md-9 main-menu-strip">
         <div class="col-md-8">
-            <a class="btn btn-default button-mainmenu" href="#">Browse</a>
-            <a class="btn btn-default button-mainmenu" href="#">Create</a>
-            <a class="btn btn-default button-mainmenu" href="#">About</a>
+            <a class="btn btn-default button-mainmenu" href="browse.html">Browse</a>
+            <a class="btn btn-default button-mainmenu" href="http://envolvesc.me/form.php">Create</a>
+            <a class="btn btn-default button-mainmenu" href="about.html">About</a>
             <a class="btn btn-default button-mainmenu" href="#">My Issues</a>
         </div>
         <div class="col-md-4">
