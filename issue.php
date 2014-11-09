@@ -156,7 +156,9 @@
 <body>
     <div class="navbar menubar">
         <div class="col-md-3 no-margin">
-            <img src="images/envolve%20logo.jpg" class="img-responsive" alt="logo">
+            <a href="index.html">
+                <img src="images/envolve%20logo.jpg" class="img-responsive" alt="logo">
+            </a>
         </div>
         <div class="col-md-9 main-menu-strip">
             <div class="col-md-8">
@@ -194,15 +196,15 @@
                     <div class="item">
                         <img src="images/LA%20skyline.jpg" class="img-responsive" alt="Responsive image">
                         <div class="carousel-caption">
-                            <h3 class="blue">LA Skyline</h3>
-                            <p>Good stuff</p>
+                            <h3 class="blue"></h3>
+                            <p></p></p>
                         </div>
                     </div>
                     <div class="item">
                         <img src="images/LA%20skyline.jpg" class="img-responsive" alt="Responsive image">
                         <div class="carousel-caption">
-                            <h3 class="blue">LA Skyline</h3>
-                            <p>Good stuff</p>
+                            <h3 class="blue"></h3>
+                            <p></p>
                         </div>
                     </div>
                 </div>

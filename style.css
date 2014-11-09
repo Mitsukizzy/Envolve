@@ -51,6 +51,15 @@ h1, h2, h3{
     border: 1px solid #CCCCCC;
 }
 
+.tri-col{
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 15px;
+}
+.footer{
+    margin: 50px 0;   
+}
+
 body{
     padding: 0 150px;   
 }
